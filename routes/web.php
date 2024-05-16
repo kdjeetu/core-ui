@@ -79,6 +79,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::resource('mail',        'MailController');
         Route::resource('students',        'StudentController');
         Route::resource('units',        'UnitController');
+        Route::resource('products',        'ProductController');
         Route::resource('services',        'ServiceController');
         Route::resource('categories',        'CategoryController');
         Route::resource('payment_methods',        'PaymentMethodController');
