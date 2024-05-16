@@ -80,6 +80,7 @@ Route::group(['middleware' => ['get.menu']], function () {
         Route::resource('students',        'StudentController');
         Route::resource('units',        'UnitController');
         Route::resource('services',        'ServiceController');
+        Route::resource('categories',        'CategoryController');
         Route::resource('payment_methods',        'PaymentMethodController');
         Route::get('prepareSend/{id}',        'MailController@prepareSend')->name('prepareSend');
         Route::post('mailSend/{id}',        'MailController@send')->name('mailSend');
