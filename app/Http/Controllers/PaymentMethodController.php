@@ -47,44 +47,46 @@ class PaymentMethodController extends Controller
      * @param  \App\Models\Payment_Method  $payment_Method
      * @return \Illuminate\Http\Response
      */
-    public function show(Payment_Method $payment_Method)
+    public function show(Payment_Method $payment_method)
     {
-        return view('dashboard.payment_methods.show', compact('payment_Method'));
+        // dd($payment_methods);
+        // die;
+        return view('dashboard.payment_methods.show', compact('payment_method'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Payment_Method  $payment_Method
+     * @param  \App\Models\Payment_Method  $payment_method
      * @return \Illuminate\Http\Response
      */
-    public function edit(Payment_Method $payment_Method)
+    public function edit(Payment_Method $payment_method)
     {
-        return view('dashboard.payment_methods.edit', compact('payment_Method'));
+        return view('dashboard.payment_methods.edit', compact('payment_method'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \App\Http\Requests\UpdatePayment_MethodRequest  $request
-     * @param  \App\Models\Payment_Method  $payment_Method
+     * @param  \App\Models\Payment_Method  $payment_method
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePayment_MethodRequest $request, Payment_Method $payment_Method)
+    public function update(UpdatePayment_MethodRequest $request, Payment_Method $payment_method)
     {
-        $payment_Method->update($request->all());
+        $payment_method->update($request->all());
         return redirect()->route('payment_methods.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Payment_Method  $payment_Method
+     * @param  \App\Models\Payment_Method  $payment_method
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Payment_Method $payment_Method)
+    public function destroy(Payment_Method $payment_method)
     {
-        $payment_Method->delete();
+        $payment_method->delete();
         return redirect()->route('payment_methods.index');
     }
 }

@@ -11,7 +11,7 @@
                         <h4>Edit Payment_Method</h4>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('payment_methods.update', $payment_Method->id) }}">
+                        <form method="POST" action="{{ route('payment_methods.update', $payment_method->id) }}">
                             @csrf
                             @method('PUT')
                             <div class="form-group row">
@@ -22,7 +22,7 @@
                                 <label>Status</label>
                                 <input class="form-control" type="text" placeholder="Status" name="status" required value="{{ $payment_method->status }}" />
                             </div>
-                            <button class="btn btn-success" type="submit">Edit</button>
+                            <button class="btn btn-success" type="submit">Update</button>
                             <a href="{{ route('payment_methods.index') }}" class="btn btn-primary">Return</a>
                         </form>
                     </div>
